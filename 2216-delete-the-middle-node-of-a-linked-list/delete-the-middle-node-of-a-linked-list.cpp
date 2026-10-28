@@ -22,6 +22,7 @@ public:
         }
         ListNode* del = slow->next;
         slow->next = slow->next->next;
+        delete del;
         return head;
     }
 };
