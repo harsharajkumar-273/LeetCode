@@ -13,9 +13,7 @@ public:
         ListNode* curr = head;
         while(curr!=nullptr){
             if(set.contains(curr))return true;
-            else{
-                set.insert(curr);
-            }
+            set.insert(curr);
             curr = curr->next;
         }
         return false;
