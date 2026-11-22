@@ -12,20 +12,20 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        std::vector<vector<int>> result;
-        if(root == nullptr)return result;
+        std::vector<vector<int>> result ;
+        if(root == nullptr) return result;
         std::queue<TreeNode*> q;
-        q.push(root);
+        TreeNode * node = root;
+        q.push(node);
         while(!q.empty()){
-            vector<int> indi;
-            int n = q.size();
-            for(int i =0;i<n;i++){
-                TreeNode * curr = q.front();
+            vector<int > indi;
+            int size = q.size();
+            for(int i =0;i<size;i++){
+                TreeNode* x = q.front();
+                indi.push_back(x->val);
                 q.pop();
-                indi.push_back(curr->val);
-                if(curr->left!=nullptr)q.push(curr->left);
-                if(curr->right!=nullptr)q.push(curr->right);
-
+               if(x->left!=nullptr)q.push(x->left);
+               if(x->right!=nullptr)q.push(x->right);
             }
             result.push_back(indi);
         }
